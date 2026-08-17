@@ -2,7 +2,7 @@
 
 [English](README.md) | 中文
 
-[![skills.sh](https://skills.sh/b/Etavioxy/friction-skills)](https://skills.sh/Etavioxy/friction-skills)
+[![skills.sh](https://img.shields.io/badge/skills.sh-friction--skills-8A2BE2)](https://www.skills.sh/skills/etavioxy/friction-skills)
 
 Harness 包括工具链、Context 工程、流程机制，定义：Friction 是由于 Harness 的问题导致的 Agent 能力损耗。
 
