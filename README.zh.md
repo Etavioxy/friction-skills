@@ -8,7 +8,7 @@ Harness 包括工具链、Context 工程、流程机制，定义：Friction 是�
 
 Friction Skills，尝试解决 Friction 的一套记录、调查、修复的流程。
 
-为什么做、愿景是什么——见 [VISION.md](VISION.md)。
+为什么做、愿景是什么——见 [VISION.zh.md](VISION.zh.md)。
 
 ## 安装
 
