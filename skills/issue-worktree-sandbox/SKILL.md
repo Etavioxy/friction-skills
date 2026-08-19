@@ -92,10 +92,11 @@ from-candidate-fix-<N>/issue-<M>-<short-slug>
 
 ### 5. 关闭候选 Issue
 
-候选处理与交叉验证完成后，invoke `issue-lifecycle` 的关闭流程。agent review 发现问题时，将证据 append 到 Issue draft，回到候选处理。review 通过后，由 `issue-lifecycle` 确认 Issue、Issue draft、修复变更与验证证据一致，再将候选版本的绑定 Issue 标为 `fixed` 并提交。
+候选处理与交叉验证完成后，请 invoke [[issue-lifecycle]] 的关闭流程。agent review 发现问题时，将证据 append 到 Issue draft，回到候选处理。review 通过后，由 `issue-lifecycle` 确认 Issue、Issue draft、修复变更与验证证据一致，再将候选版本的绑定 Issue 标为 `fixed` 并提交。
 
 ## 关键约束
 
 - 只处理当前绑定 Issue；候选版本的 `fixed` 不代表主路径已采纳。
+- 采纳候选分支到主分支（`candidate-fix/*` → 主分支）时用 `git merge --no-ff`——保留候选提交边界为 merge commit，便于追溯；不使用 fast-forward。
 - 原工作区不在候选处理的可修改范围中；仅移除本次未提交的绑定 Issue，以保证主分支不存在它。
 - 具体 Git 操作、项目进程与外部状态操作按当前项目文档、相关 Skill、registry 边界和实际环境确定。

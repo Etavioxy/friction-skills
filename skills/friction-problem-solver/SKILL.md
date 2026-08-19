@@ -25,21 +25,22 @@ description: 调查被委托的具体问题，按需协商 Issue 并获得候选
 - 问题边界与解释是否已有可复查依据？
 - 是否已尽力满足最初委托的具体需要？
 - 结论是否明确为：可直接回报，或需要进入 Issue 协商？
-- **是否是行为缺陷而非文档缺失？**——文档缺失不是 Issue，应回报缺失内容，不登记为 Issue
+- **是否是行为缺陷而非文档缺失？**——文档缺失不是 Issue，应回报缺失内容，不进入 Issue 协商
+- **是否需增补工具？**——需要增补工具（或主 agent 要求增加工具）时，必须进入 Issue 协商，不直接回报
 
 任一未通过时继续调查。可直接回报时，回报后退出本流程；只有确认需要 Issue 时进入下一阶段。
 
 ## Issue 协商
 
-**目标**：将调查确认的问题登记为 Issue，并保持未提交，等待 sandbox 接管。
+**目标**：先协商 Issue，如果通过主 agent 确认，将调查确认的问题登记为 Issue，并保持未提交，等待 sandbox 接管。
 
 **步骤**：
 
-1. 自行 invoke `issue-lifecycle`，并将主 agent 作为其中的用户协商；对“登记后的提交方式”使用本阶段的设置：写入 Issue 但保持未提交。
+1. 请 invoke [[issue-lifecycle]]，并将主 agent 作为其中的用户协商；对“登记后的提交方式”使用本阶段的设置：写入 Issue 但保持未提交。
 
 **门禁**：
 
-- 是否已 invoke `issue-lifecycle`？
+- 是否已 invoke [[issue-lifecycle]]？
 - 是否已将主 agent 作为其中的用户完成协商？
 - Issue 是否只陈述已确认的问题，而不是调查中的推测？
 - Issue 是否记录在正确项目的 `issues.md`？
@@ -55,7 +56,7 @@ description: 调查被委托的具体问题，按需协商 Issue 并获得候选
 
 **步骤**：
 
-1. 自行 invoke `issue-worktree-sandbox`。
+1. 请 invoke [[issue-worktree-sandbox]]。
 2. 将已登记 Issue 交给 sandbox，由其决定是否适合候选修复、绕过与验证方式；不重复其内部决策。
 3. 接收候选结果并完成本阶段。
 
