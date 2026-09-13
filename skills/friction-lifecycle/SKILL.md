@@ -9,6 +9,12 @@ description: 任务循环的 friction 记录规范。发现 friction 时维护�
 
 Friction 是任务循环中遇到的系统性卡点，需要停下调查才能继续。包括：上游保证与实际体验不符、工具链缺少阻止错误或恢复的机制，以及操作错误所暴露的系统性缺口。
 
+## 归属
+
+Friction 属于**本任务的初始工作仓库**——任务在哪个仓干活，friction 就记在那个仓的 `frictions.md`。判断依据是「我的工作循环卡在哪」，不是「谁引入了这个卡点」。
+
+调查途中访问到的其它仓（上游项目、被审查的依赖）**不产出 friction 条目**。看到别仓既有的 friction / issue 只作**调查输入**。
+
 ## 格式
 
 ```markdown
@@ -108,7 +114,7 @@ gap 文件格式：
 
 ## 处理流程
 
-1. 确认 friction 后，先在当前任务的 `frictions.md` 建立 `undecided` 条目并立即单独提交，不猜测原因。
+1. 确认 friction 后，先在**本任务初始工作仓库**的 `frictions.md` 建立 `undecided` 条目并立即单独提交，不猜测原因。
 2. 搜索可见 Skills，记录搜索结果；搜索确认 friction 有上游项目归属时走上游路径（第 4 步），不建 gap 文件；确认 Skill 缺口时，创建对应 gap 文件并立即单独提交。
 3. 按“调查委托”派 agent 处理具体问题。
 4. 根据回报更新原 friction 条目和 tags，并立即单独提交。若需要项目级跟踪，与 agent 对齐拟议 Issue；然后要求 agent 继续候选修复。若 agent 回报为文档缺失而非行为缺陷，不登记为 Issue，退回 `skill-gap` 路径。
